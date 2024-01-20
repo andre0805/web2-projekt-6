@@ -27,7 +27,7 @@ p {
 .button {
   display: inline-block;
   margin-top: 20px;
-  padding: 16px 32px;
+  padding: 12px 24px;
   font-weight: bold;
   text-decoration: none;
   background-color: #ef1414;
@@ -37,7 +37,7 @@ p {
   box-shadow: #171717 0 0 4px;
 }
 
-a.button:hover {
+.button:hover {
   background-color: #ff0000;
   box-shadow: #171717 0 0 6px;
   transform: scale(1.01);
