@@ -28,4 +28,10 @@ a {
   text-decoration: none;
   color: #171717;
 }
+
+@media (max-width: 800px) {
+  header {
+    font-size: 16px;
+  }
+}
 </style>
