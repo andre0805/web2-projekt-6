@@ -1,17 +1,16 @@
 <script setup>
+
 </script>
 
 <template>
-  <div class="welcome_text">
-    <p>Welcome to <b>The Movie Hub</b>.</p>
-    <p>Explore different movies and choose your favorites.</p>
-    <router-link class="button" to="/movies">Let's explore&nbsp;&nbsp;➜</router-link>
+  <div>
+    <p>Sorry, the page you're looking for doesn't exist 😢</p>
+    <router-link class="button" to="/movies">Back</router-link>
   </div>
 </template>
 
 <style scoped>
-
-div.welcome_text {
+div {
   margin-top: 200px;
   text-align: center;
   font-size: 20px;
@@ -43,5 +42,4 @@ a.button:hover {
   box-shadow: #171717 0 0 6px;
   transform: scale(1.01);
 }
-
 </style>
