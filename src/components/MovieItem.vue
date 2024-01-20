@@ -1,21 +1,16 @@
 <script>
 export default {
-  data() {
-    return {
-      movie: {
-        id: 1,
-        title: "Justice League: Crisis on Infinite Earths Part One",
-        rating: 8.5,
-        image: "https://image.tmdb.org/t/p/w500/zR6C66EDklgTPLHRSmmMt5878MR.jpg",
-        description: "Death is coming. Worse than death: oblivion. Not just for our Earth, but for everyone, everywhere, in every universe! Against this ultimate destruction, the mysterious Monitor has gathered the greatest team of Super Heroes ever assembled. But what can the combined might of Superman, Wonder Woman, Batman, The Flash, Green Lantern and hundreds of Super Heroes from multiple Earths even do to save all of reality from an unstoppable antimatter armageddon?! Death is coming. Worse than death: oblivion. Not just for our Earth, but for everyone, everywhere, in every universe! Against this ultimate destruction, the mysterious Monitor has gathered the greatest team of Super Heroes ever assembled. But what can the combined might of Superman, Wonder Woman, Batman, The Flash, Green Lantern and hundreds of Super Heroes from multiple Earths even do to save all of reality from an unstoppable antimatter armageddon?!Death is coming. Worse than death: oblivion. Not just for our Earth, but for everyone, everywhere, in every universe! Against this ultimate destruction, the mysterious Monitor has gathered the greatest team of Super Heroes ever assembled. But what can the combined might of Superman, Wonder Woman, Batman, The Flash, Green Lantern and hundreds of Super Heroes from multiple Earths even do to save all of reality from an unstoppable antimatter armageddon?! Death is coming. Worse than death: oblivion. Not just for our Earth, but for everyone, everywhere, in every universe! Against this ultimate destruction, the mysterious Monitor has gathered the greatest team of Super Heroes ever assembled. But what can the combined might of Superman, Wonder Woman, Batman, The Flash, Green Lantern and hundreds of Super Heroes from multiple Earths even do to save all of reality from an unstoppable antimatter armageddon?!",
-      },
-    };
+  props: ["movie"],
+  computed: {
+    movieUrl() {
+      return "/movies/" + this.movie.id;
+    },
   },
 };
 </script>
 
 <template>
-  <router-link :to="'/movies/' + movie.id">
+  <router-link :to=movieUrl>
     <div class="movie-item">
       <img :src="movie.image" :alt="movie.title" class="movie-image" />
       <div class="movie-details">
