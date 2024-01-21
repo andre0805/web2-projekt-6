@@ -36,7 +36,9 @@ export default {
   width: 80%;
   height: 70%;
   border: none;
+  overflow: hidden;
   border-radius: 8px;
+  box-shadow: #171717 0 0 8px;
 }
 
 .close-button {
@@ -45,7 +47,6 @@ export default {
   right: 0;
   padding: 2px 8px 4px 8px;
   border: none;
-  border-radius: 0 7px 0 4px;
   background: none;
   font-size: 22px;
   background: #171717;
