@@ -56,6 +56,8 @@ export default {
     <div class="movie-details">
       <p class="movie-title">{{ title }}</p>
 
+      <rating class="movie-rating" :rating="movie.rating" />
+
       <p class="label">Plot</p>
       <p class="element">{{ description }}</p>
 
@@ -113,9 +115,17 @@ export default {
 }
 
 .movie-title {
+  margin-top: 32px;
+  margin-bottom: 0;
   padding: 0;
   font-size: 24px;
   font-weight: bold;
+}
+
+.movie-rating {
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-size: 16px;
 }
 
 .label {
@@ -144,7 +154,18 @@ export default {
   }
 
   .movie-title {
-    font-size: 16px;
+    margin-top: 4px;
+    font-size: 20px;
+  }
+
+  .movie-rating {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 14px;
   }
 
   .element {

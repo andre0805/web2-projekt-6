@@ -11,6 +11,7 @@ import GenreCarousel from '@/components/GenreCarousel.vue'
 import GenreItem from '@/components/GenreItem.vue'
 import Popup from '@/components/Popup.vue'
 import MovieDetails from '@/components/MovieDetails.vue'
+import Rating from '@/components/Rating.vue'
 
 const app = createApp(App)
 
@@ -22,4 +23,5 @@ app.component("genre-carousel", GenreCarousel);
 app.component("genre-item", GenreItem)
 app.component("popup", Popup)
 app.component("movie-details", MovieDetails)
+app.component("rating", Rating)
 app.mount('#app')

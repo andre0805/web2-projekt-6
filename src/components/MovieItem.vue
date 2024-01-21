@@ -9,6 +9,7 @@ export default {
     <img class="movie-image" :src="movie.posterUrl" :alt="movie.title" />
     <div class="movie-details">
       <p class="movie-title">{{ movie.title }}</p>
+      <rating class="movie-rating" :rating="movie.rating" />
       <p class="movie-description">{{ movie.description }}</p>
     </div>
   </div>
@@ -60,10 +61,14 @@ export default {
   -webkit-box-orient: vertical;
 }
 
-.movie-description {
-  //max-height: 150px;
+.movie-rating {
+  margin-top: 4px;
+  margin-bottom: 0;
   font-size: 14px;
-  //text-align: justify;
+}
+
+.movie-description {
+  font-size: 14px;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -90,6 +95,12 @@ a {
 
   .movie-title {
     font-size: 16px;
+  }
+
+  .movie-rating {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 12px;
   }
 
   .movie-description {
