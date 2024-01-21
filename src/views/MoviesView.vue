@@ -1,6 +1,10 @@
 <script>
 
+import Popup from '@/components/Popup.vue'
+import MovieItem from '@/components/MovieItem.vue'
+
 export default {
+  components: { MovieItem, Popup },
   data() {
     return {
       movies: [
@@ -537,7 +541,8 @@ export default {
           "name": "Western"
         },
       ],
-      selectedGenre: null
+      selectedGenre: null,
+      selectedMovie: null,
     };
   },
   computed: {
@@ -554,6 +559,10 @@ export default {
       this.selectedGenre = genre.id;
       console.log("Selected genre:", this.selectedGenre);
     },
+    setSelectedMovie(movie) {
+      this.selectedMovie = movie;
+      console.log("Selected movie:", this.selectedMovie);
+    },
   },
 
 };
@@ -563,8 +572,17 @@ export default {
   <genre-carousel :genres=genres :selectedGenreId="selectedGenre" @selectGenre="setSelectedGenre" />
 
   <div class="movie-grid">
-    <movie-item v-for="movie in filteredMovies" :key="movie.id" :movie="movie" />
+    <movie-item
+      v-for="movie in filteredMovies"
+      :key="movie.id"
+      :movie="movie"
+      @click="setSelectedMovie(movie)"
+    />
   </div>
+
+  <popup v-if="selectedMovie" :movie="selectedMovie" @close="() => setSelectedMovie(null)">
+    <movie-item :movie="selectedMovie" />
+  </popup>
 </template>
 
 <style scoped>

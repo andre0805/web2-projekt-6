@@ -19,11 +19,6 @@ const router = createRouter({
       component: () => import('../views/MoviesView.vue')
     },
     {
-      path: '/movies/:id',
-      name: 'movie_details',
-      component: () => import('../views/MovieDetailsView.vue')
-    },
-    {
       path: '/:not_found(.*)*',
       name: 'page_not_found',
       component: PageNotFoundView

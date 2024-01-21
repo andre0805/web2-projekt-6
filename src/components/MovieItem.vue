@@ -1,24 +1,17 @@
 <script>
 export default {
   props: ["movie"],
-  computed: {
-    movieUrl() {
-      return "/movies/" + this.movie.id;
-    },
-  },
 };
 </script>
 
 <template>
-  <router-link :to=movieUrl>
-    <div class="movie-item">
-      <img class="movie-image" :src="movie.posterUrl" :alt="movie.title" />
-      <div class="movie-details">
-        <p class="movie-title">{{ movie.title }}</p>
-        <p class="movie-description">{{ movie.description }}</p>
-      </div>
+  <div class="movie-item">
+    <img class="movie-image" :src="movie.posterUrl" :alt="movie.title" />
+    <div class="movie-details">
+      <p class="movie-title">{{ movie.title }}</p>
+      <p class="movie-description">{{ movie.description }}</p>
     </div>
-  </router-link>
+  </div>
 </template>
 
 <style scoped>
@@ -34,6 +27,7 @@ export default {
   box-shadow: #171717 0 2px 8px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .movie-item:hover {
