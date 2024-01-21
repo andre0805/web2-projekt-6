@@ -10,7 +10,6 @@
 </template>
 
 <style scoped>
-
 div.welcome_text {
   margin-top: 200px;
   text-align: center;

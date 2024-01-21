@@ -568,7 +568,6 @@ export default {
 </template>
 
 <style scoped>
-
 .movie-grid {
   display: flex;
   flex-direction: column;
@@ -578,5 +577,4 @@ export default {
   gap: 20px;
   background: #e01111;
 }
-
 </style>

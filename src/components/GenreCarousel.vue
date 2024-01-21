@@ -1,5 +1,4 @@
 <script>
-
 export default {
   props: ["genres", "selectedGenreId"],
   emits: ["selectGenre"],
@@ -43,5 +42,4 @@ export default {
   width: fit-content;
   padding: 8px 32px;
 }
-
 </style>

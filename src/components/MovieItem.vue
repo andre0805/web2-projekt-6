@@ -22,7 +22,6 @@ export default {
 </template>
 
 <style scoped>
-
 .movie-item {
   display: flex;
   flex-direction: row;
@@ -109,5 +108,4 @@ a {
     -webkit-box-orient: vertical;
   }
 }
-
 </style>

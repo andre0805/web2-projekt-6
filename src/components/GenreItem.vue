@@ -42,5 +42,4 @@ p.selected:hover {
 p.not-selected:hover {
   background: #232020;
 }
-
 </style>
