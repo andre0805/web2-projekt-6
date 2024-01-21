@@ -572,7 +572,7 @@ export default {
 <template>
   <genre-carousel :genres=genres :selectedGenreId="selectedGenre" @selectGenre="setSelectedGenre" />
 
-  <div class="movie-list">
+  <div class="movie-list" :key="selectedGenre">
     <movie-item
       v-for="movie in filteredMovies"
       :key="movie.id"
@@ -595,5 +595,18 @@ export default {
   padding: 20px 50px;
   gap: 20px;
   background: #e01111;
+  animation: 0.4s ease-in-out 0s 1 slideInFromTop;
 }
+
+@keyframes slideInFromTop {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
 </style>

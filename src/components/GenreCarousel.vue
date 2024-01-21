@@ -7,7 +7,7 @@ export default {
 
 <template>
   <div class="carousel">
-    <genre-item
+    <genre-carousel-item
       class="carousel-item"
       v-for="genre of genres"
       :key="genre.id"

@@ -27,12 +27,13 @@ export default {
   border-radius: 8px;
   box-shadow: #171717 0 2px 8px;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .movie-item:hover {
   transform: scale(1.02);
+  background: #232020;
 }
 
 .movie-image {

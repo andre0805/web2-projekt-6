@@ -27,6 +27,18 @@ p:hover {
 .selected {
   background: #fff;
   color: #e01111;
+  animation: 0.4s ease-in-out 0s 1 colorChange;
+}
+
+@keyframes colorChange {
+  0% {
+    background: #171717;
+    color: white;
+  }
+  100% {
+    background: #fff;
+    color: #e01111;
+  }
 }
 
 p.selected:hover {
