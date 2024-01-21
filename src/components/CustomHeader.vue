@@ -4,6 +4,9 @@ export default {
     showSearch() {
       return this.$route.path === "/movies";
     },
+    showMovies() {
+      return this.$route.path === "/search";
+    },
   },
 }
 </script>
@@ -14,8 +17,12 @@ export default {
       🎬&nbsp;&nbsp;The Movie Hub
     </router-link>
 
-    <router-link v-if="showSearch" class="search" to="/search">
+    <router-link v-if="showSearch" class="link" to="/search">
       🔍&nbsp;&nbsp;Search
+    </router-link>
+
+    <router-link v-else-if="showMovies" class="link" to="/movies">
+      🎬&nbsp;&nbsp;Movies
     </router-link>
 
   </header>
@@ -40,13 +47,13 @@ header {
   font-weight: bold;
 }
 
-.search {
+.link {
   color: #1e1d1d;
   font-size: 22px;
   transition: all 0.3s ease-in-out;
 }
 
-.search:hover {
+.link:hover {
   color: black;
   text-decoration: underline;
 }
