@@ -1,17 +1,20 @@
 <script>
 
 export default {
-  props: ["genres"],
+  props: ["genres", "selectedGenreId"],
+  emits: ["selectGenre"],
 };
 </script>
 
 <template>
   <div class="carousel">
     <genre-item
+      class="carousel-item"
       v-for="genre of genres"
       :key="genre.id"
       :genre="genre"
-      class="carousel-item"
+      :isSelected="genre.id === selectedGenreId"
+      @click="$emit('selectGenre', genre)"
     />
   </div>
 </template>
@@ -21,7 +24,7 @@ export default {
   margin: 0 16px;
   padding: 16px 8px;
   display: grid;
-  grid-template-columns: repeat(19, auto);
+  grid-template-columns: repeat(20, auto);
   grid-column-gap: 16px;
   overflow: scroll;
   align-items: center;

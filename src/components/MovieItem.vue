@@ -12,7 +12,7 @@ export default {
 <template>
   <router-link :to=movieUrl>
     <div class="movie-item">
-      <img :src="movie.image" :alt="movie.title" class="movie-image" />
+      <img class="movie-image" :src="movie.posterUrl" :alt="movie.title" />
       <div class="movie-details">
         <p class="movie-title">{{ movie.title }}</p>
         <p class="movie-description">{{ movie.description }}</p>
@@ -32,7 +32,7 @@ export default {
   height: 200px;
   background: #171717;
   border-radius: 8px;
-  box-shadow: #171717 2px 2px 8px;
+  box-shadow: #171717 0 2px 8px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
@@ -88,7 +88,7 @@ a {
   .movie-item {
     flex-direction: column;
     width: 100%;
-    height: 450px;
+    height: fit-content;
   }
 
   .movie-image {

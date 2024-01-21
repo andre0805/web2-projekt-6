@@ -1,29 +1,46 @@
 <script>
 export default {
-  props: ["genre"],
+  props: ["genre", "isSelected"],
 }
 </script>
 
 <template>
-  <a class="button" href="">{{genre.name}}</a>
+  <p v-if="isSelected" class="selected">{{genre.name}}</p>
+  <p v-else class="not-selected">{{genre.name}}</p>
 </template>
 
 <style scoped>
-a {
+p {
   border-radius: 16px;
-  background: #171717;
-  color: white;
   font-size: 12px;
   font-weight: bolder;
   text-align: center;
   text-transform: uppercase;
-  box-shadow: #171717 2px 2px 8px;
   transition: all 0.3s ease-in-out;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-a:hover {
+p:hover {
   transform: scale(1.05);
+}
+
+.selected {
+  background: #fff;
+  color: #e01111;
+}
+
+p.selected:hover {
+  background: #fff;
+}
+
+.not-selected {
+  background: #171717;
+  color: white;
+  box-shadow: #171717 2px 2px 8px;
+}
+
+p.not-selected:hover {
   background: #232020;
 }
+
 </style>
