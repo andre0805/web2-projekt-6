@@ -1,11 +1,13 @@
 <script>
 
 import Popup from '@/components/Popup.vue'
-import MovieItem from '@/components/MovieItem.vue'
+import MovieItem from '@/components/MovieListItem.vue'
 import MovieDetails from '@/components/MovieDetails.vue'
+import MovieListItem from '@/components/MovieListItem.vue'
+import MoviesList from '@/components/MoviesList.vue'
 
 export default {
-  components: { MovieDetails, MovieItem, Popup },
+  components: { MoviesList, MovieListItem, MovieDetails, MovieItem, Popup },
   data() {
     return {
       movies: [
@@ -572,14 +574,7 @@ export default {
 <template>
   <genre-carousel :genres=genres :selectedGenreId="selectedGenre" @selectGenre="setSelectedGenre" />
 
-  <div class="movie-list" :key="selectedGenre">
-    <movie-item
-      v-for="movie in filteredMovies"
-      :key="movie.id"
-      :movie="movie"
-      @click="setSelectedMovie(movie)"
-    />
-  </div>
+  <movies-list :movies="filteredMovies" :selectedGenreId="selectedGenre" @selectMovie="setSelectedMovie" />
 
   <popup v-if="selectedMovie" :movie="selectedMovie" @close="() => setSelectedMovie(null)">
     <movie-details :movie="selectedMovie" />
@@ -587,26 +582,4 @@ export default {
 </template>
 
 <style scoped>
-.movie-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 50px;
-  gap: 20px;
-  background: #e01111;
-  animation: 0.4s ease-in-out 0s 1 slideInFromTop;
-}
-
-@keyframes slideInFromTop {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-}
-
 </style>
