@@ -19,6 +19,11 @@ const router = createRouter({
       component: () => import('../views/MoviesView.vue')
     },
     {
+      path: '/search',
+      name: 'search',
+      component: () => import('../views/SearchView.vue')
+    },
+    {
       path: '/:not_found(.*)*',
       name: 'page_not_found',
       component: PageNotFoundView
