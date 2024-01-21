@@ -1,10 +1,15 @@
 <script>
 export default {
-  emits: ["selectMovie"],
   props: ["movies", "selectedGenreId"],
+  data() {
+    return {
+      selectedMovie: null,
+    };
+  },
   methods: {
-    selectMovie(movie) {
-      this.$emit("selectMovie", movie);
+    setSelectedMovie(movie) {
+      this.selectedMovie = movie;
+      console.log("Selected movie:", this.selectedMovie);
     },
   },
 };
@@ -16,9 +21,13 @@ export default {
       v-for="movie in movies"
       :key="movie.id"
       :movie="movie"
-      @click="selectMovie(movie)"
+      @click="setSelectedMovie(movie)"
     />
   </div>
+
+  <popup v-if="selectedMovie" :movie="selectedMovie" @close="() => setSelectedMovie(null)">
+    <movie-details :movie="selectedMovie" />
+  </popup>
 </template>
 
 <style scoped>

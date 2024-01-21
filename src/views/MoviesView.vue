@@ -1,13 +1,11 @@
 <script>
 
 import Popup from '@/components/Popup.vue'
-import MovieItem from '@/components/MovieListItem.vue'
 import MovieDetails from '@/components/MovieDetails.vue'
-import MovieListItem from '@/components/MovieListItem.vue'
 import MoviesList from '@/components/MoviesList.vue'
 
 export default {
-  components: { MoviesList, MovieListItem, MovieDetails, MovieItem, Popup },
+  components: { MoviesList, MovieDetails, Popup },
   data() {
     return {
       movies: [
@@ -562,10 +560,6 @@ export default {
       this.selectedGenre = genre.id;
       console.log("Selected genre:", this.selectedGenre);
     },
-    setSelectedMovie(movie) {
-      this.selectedMovie = movie;
-      console.log("Selected movie:", this.selectedMovie);
-    },
   },
 
 };
@@ -573,12 +567,7 @@ export default {
 
 <template>
   <genre-carousel :genres=genres :selectedGenreId="selectedGenre" @selectGenre="setSelectedGenre" />
-
-  <movies-list :movies="filteredMovies" :selectedGenreId="selectedGenre" @selectMovie="setSelectedMovie" />
-
-  <popup v-if="selectedMovie" :movie="selectedMovie" @close="() => setSelectedMovie(null)">
-    <movie-details :movie="selectedMovie" />
-  </popup>
+  <movies-list :movies="filteredMovies" :selectedGenreId="selectedGenre" />
 </template>
 
 <style scoped>
