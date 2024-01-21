@@ -1,27 +1,54 @@
-<script setup>
-
+<script>
+export default {
+  computed: {
+    showSearch() {
+      return this.$route.path === "/movies";
+    },
+  },
+}
 </script>
 
 <template>
   <header>
-    <router-link to="/">
-      <h1>🎬&nbsp;&nbsp;The Movie Hub</h1>
+    <router-link class="logo" to="/">
+      🎬&nbsp;&nbsp;The Movie Hub
     </router-link>
+
+    <router-link v-if="showSearch" class="search" to="/search">
+      🔍&nbsp;&nbsp;Search
+    </router-link>
+
   </header>
 </template>
 
 <style scoped>
 header {
-  background-color: #e01111;
   margin: 0;
   padding: 16px 32px;
+  background-color: #e01111;
   text-align: left;
-  font-size: 22px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h1 {
-  margin: 0;
+.logo {
   color: #171717;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.search {
+  color: #1e1d1d;
+  font-size: 22px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search:hover {
+  color: black;
+  text-decoration: underline;
 }
 
 a {
@@ -30,7 +57,11 @@ a {
 }
 
 @media (max-width: 800px) {
-  header {
+  .logo {
+    font-size: 32px;
+  }
+
+  .search {
     font-size: 16px;
   }
 }
