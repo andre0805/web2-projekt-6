@@ -30,6 +30,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 .popup-inner {
   position: relative;
   background-color: #fff;
@@ -39,6 +40,16 @@ export default {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: #171717 0 0 8px;
+  animation: 0.4s ease-in-out 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .close-button {
