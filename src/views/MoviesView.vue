@@ -572,18 +572,7 @@ export default {
 <template>
   <genre-carousel :genres=genres :selectedGenreId="selectedGenre" @selectGenre="setSelectedGenre" />
 
-  <div v-if="selectedMovie" class="non-scrollable">
-    <div class="movie-list">
-      <movie-item
-        v-for="movie in filteredMovies"
-        :key="movie.id"
-        :movie="movie"
-        @click="setSelectedMovie(movie)"
-      />
-    </div>
-  </div>
-
-  <div v-else class="movie-list">
+  <div class="movie-list">
     <movie-item
       v-for="movie in filteredMovies"
       :key="movie.id"
@@ -592,22 +581,12 @@ export default {
     />
   </div>
 
-  <popup
-    v-if="selectedMovie"
-    :movie="selectedMovie"
-    @close="() => setSelectedMovie(null)"
-    @click="() => setSelectedMovie(null)"
-  >
+  <popup v-if="selectedMovie" :movie="selectedMovie" @close="() => setSelectedMovie(null)">
     <movie-details :movie="selectedMovie" />
   </popup>
 </template>
 
 <style scoped>
-.non-scrollable {
-  height: calc(100% - 200px);
-  overflow: hidden;
-}
-
 .movie-list {
   display: flex;
   flex-direction: column;

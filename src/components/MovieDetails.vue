@@ -136,12 +136,11 @@ export default {
 @media (max-width: 800px) {
   .movie-item {
     flex-direction: column;
-    width: 100%;
-    height: fit-content;
   }
 
   .movie-image {
     width: 100%;
+    max-height: 200px;
   }
 
   .movie-title {
@@ -150,12 +149,6 @@ export default {
 
   .element {
     font-size: 12px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
   }
 }
 </style>
