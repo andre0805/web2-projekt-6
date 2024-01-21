@@ -28,20 +28,34 @@ p {
 .button {
   display: inline-block;
   margin-top: 20px;
-  padding: 16px 32px;
+  padding: 12px 24px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  background-color: #ef1414;
-  color: #171717;
+  background-color: #171717;
+  color: #ffffff;
   border-radius: 5px;
   transition: all 0.3s ease 0s;
   box-shadow: #171717 0 0 4px;
 }
 
-a.button:hover {
-  background-color: #ff0000;
-  box-shadow: #171717 0 0 6px;
-  transform: scale(1.01);
+.button:hover {
+  background-color: #000000;
+  transform: scale(1.05);
 }
 
+@media (max-width: 800px) {
+  div.welcome_text {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+}
 </style>
