@@ -47,6 +47,7 @@ export default {
   right: 0;
   padding: 2px 8px 4px 8px;
   border: none;
+  border-radius: 0 0 0 4px;
   background: none;
   font-size: 22px;
   background: #171717;
@@ -56,6 +57,6 @@ export default {
 }
 
 .close-button:hover {
-  background-color: #2d2b2b;
+  background-color: #e01111;
 }
 </style>
