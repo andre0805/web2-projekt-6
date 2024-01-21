@@ -9,7 +9,7 @@ export default {
     <div class="popup-inner">
       <slot />
       <button class="close-button" @click="$emit('close')">
-        &#x2715;
+        &#x00d7;
       </button>
     </div>
   </div>
@@ -45,11 +45,13 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2px 8px 4px 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  line-height: 24px;
   border: none;
   border-radius: 0 0 0 4px;
   background: none;
-  font-size: 22px;
   background: #171717;
   color: #FFF;
   cursor: pointer;
