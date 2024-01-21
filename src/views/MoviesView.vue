@@ -2,9 +2,10 @@
 
 import Popup from '@/components/Popup.vue'
 import MovieItem from '@/components/MovieItem.vue'
+import MovieDetails from '@/components/MovieDetails.vue'
 
 export default {
-  components: { MovieItem, Popup },
+  components: { MovieDetails, MovieItem, Popup },
   data() {
     return {
       movies: [
@@ -571,7 +572,18 @@ export default {
 <template>
   <genre-carousel :genres=genres :selectedGenreId="selectedGenre" @selectGenre="setSelectedGenre" />
 
-  <div class="movie-grid">
+  <div v-if="selectedMovie" class="non-scrollable">
+    <div class="movie-list">
+      <movie-item
+        v-for="movie in filteredMovies"
+        :key="movie.id"
+        :movie="movie"
+        @click="setSelectedMovie(movie)"
+      />
+    </div>
+  </div>
+
+  <div v-else class="movie-list">
     <movie-item
       v-for="movie in filteredMovies"
       :key="movie.id"
@@ -580,13 +592,23 @@ export default {
     />
   </div>
 
-  <popup v-if="selectedMovie" :movie="selectedMovie" @close="() => setSelectedMovie(null)">
-    <movie-item :movie="selectedMovie" />
+  <popup
+    v-if="selectedMovie"
+    :movie="selectedMovie"
+    @close="() => setSelectedMovie(null)"
+    @click="() => setSelectedMovie(null)"
+  >
+    <movie-details :movie="selectedMovie" />
   </popup>
 </template>
 
 <style scoped>
-.movie-grid {
+.non-scrollable {
+  height: calc(100% - 200px);
+  overflow: hidden;
+}
+
+.movie-list {
   display: flex;
   flex-direction: column;
   align-items: center;
