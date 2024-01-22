@@ -1,14 +1,14 @@
 {
-  "name": "backend",
+  "name": "the-movie-hub-backend",
   "version": "1.0.0",
   "description": "Backend for the 'The Movie Hub' app",
+  "author": "Andre Flego",
+  "license": "ISC",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Andre Flego",
-  "license": "ISC",
   "engines": {
     "node": "18.x"
   },
