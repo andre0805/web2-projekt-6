@@ -1,7 +1,10 @@
 {
-  "name": "web2-projekt-6",
-  "version": "0.0.0",
+  "name": "the-movie-hub-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the 'The Movie Hub' app",
   "private": true,
+  "author": "Andre Flego",
+  "license": "ISC",
   "type": "module",
   "scripts": {
     "dev": "vite",
