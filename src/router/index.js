@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PageNotFoundView from '../views/PageNotFoundView.vue'
+import { useMoviesStore } from '../stores/movies.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,23 @@ const router = createRouter({
       component: PageNotFoundView
     }
   ]
+})
+
+
+router.beforeEach(async (to, from, next) => {
+  // Fetch movies and genres if we are on the movies or search page
+  if (to.name === 'movies' || to.name === 'search') {
+    const moviesStore = useMoviesStore()
+
+    if (moviesStore.movies.length === 0) {
+      await moviesStore.fetchMovies()
+    }
+
+    if (moviesStore.genres.length === 0) {
+      await moviesStore.fetchGenres()
+    }
+  }
+  next()
 })
 
 export default router
