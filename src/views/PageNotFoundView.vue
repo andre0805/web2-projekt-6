@@ -5,7 +5,8 @@
 <template>
   <div>
     <p>Sorry, the page you're looking for doesn't exist 😢</p>
-    <router-link class="button" to="/movies">Back</router-link>
+    <router-link class="button" to="/">Home</router-link>
+    <router-link class="button" to="/movies">Movies</router-link>
   </div>
 </template>
 
@@ -26,7 +27,7 @@ p {
 
 .button {
   display: inline-block;
-  margin-top: 20px;
+  margin: 20px;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
