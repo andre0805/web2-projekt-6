@@ -13,10 +13,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  // dev server proxy
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://web2-projekt-6-backend.onrender.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
