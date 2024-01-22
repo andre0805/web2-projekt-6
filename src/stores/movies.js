@@ -12,6 +12,9 @@ export const useMoviesStore = defineStore('movies',  {
       return state._isLoading
     },
     movies: (state) => {
+      return state._movies || []
+    },
+    moviesForSelectedGenre: (state) => {
       if (state._selectedGenreId) {
         return state._movies.filter(movie => movie.genres.map(g => g.id).includes(state._selectedGenreId))
       }
@@ -36,11 +39,16 @@ export const useMoviesStore = defineStore('movies',  {
         console.log(response)
         this._movies = await response.json()
 
-        this._isLoading = false
+        setTimeout(() => {
+          this._isLoading = false
+        }, 1000)
       } catch (error) {
         console.error(error)
         this._movies = []
-        this._isLoading = false
+
+        setTimeout(() => {
+          this._isLoading = false
+        }, 1000)
       }
     },
     async fetchGenres() {
@@ -53,11 +61,16 @@ export const useMoviesStore = defineStore('movies',  {
         const fetchedGenres = await response.json()
         this._genres.push({id: null, name: 'All'}, ...fetchedGenres);
 
-        this._isLoading = false
+        setTimeout(() => {
+          this._isLoading = false
+        }, 1000)
       } catch (error) {
         console.error(error)
         this._genres = []
-        this._isLoading = false
+
+        setTimeout(() => {
+          this._isLoading = false
+        }, 1000)
       }
     },
     selectGenre(genre) {
