@@ -1,18 +1,18 @@
 <script>
 export default {
-  props: ["movies", "selectedGenreId"],
+  props: ['movies', 'selectedGenreId'],
   data() {
     return {
-      selectedMovie: null,
-    };
+      selectedMovie: null
+    }
   },
   methods: {
     setSelectedMovie(movie) {
-      this.selectedMovie = movie;
-      console.log("Selected movie:", this.selectedMovie);
-    },
-  },
-};
+      this.selectedMovie = movie
+      console.log('Selected movie:', this.selectedMovie)
+    }
+  }
+}
 </script>
 
 <template>
@@ -52,5 +52,4 @@ export default {
     transform-origin: top;
   }
 }
-
 </style>

@@ -1,24 +1,24 @@
 <script>
 export default {
-  props: ["rating"],
+  props: ['rating'],
   computed: {
     ratingRounded() {
-      const rating = this.rating;
+      const rating = this.rating
       if (rating != null && rating > 0) {
-        return Math.round(this.rating / 2);
+        return Math.round(this.rating / 2)
       } else {
-        return null;
+        return null
       }
     },
     ratingText() {
-      const rating = this.rating / 2;
+      const rating = this.rating / 2
       if (rating != null && rating > 0) {
-        return `${rating} / 5`;
+        return `${rating} / 5`
       } else {
-        return "Unknown";
+        return 'Unknown'
       }
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -30,7 +30,6 @@ export default {
     </span>
     <span>&nbsp;({{ ratingText }})</span>
   </div>
-
 </template>
 
 <style scoped>

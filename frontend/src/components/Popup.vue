@@ -1,6 +1,6 @@
 <script>
 export default {
-  emits: ["close"],
+  emits: ['close']
 }
 </script>
 
@@ -8,9 +8,7 @@ export default {
   <div class="popup">
     <div class="popup-inner">
       <slot />
-      <button class="close-button" @click="$emit('close')">
-        &#x00d7;
-      </button>
+      <button class="close-button" @click="$emit('close')">&#x00d7;</button>
     </div>
   </div>
 </template>
@@ -64,7 +62,7 @@ export default {
   border-radius: 0 0 0 4px;
   background: none;
   background: #171717;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }

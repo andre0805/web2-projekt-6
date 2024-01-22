@@ -1,53 +1,56 @@
 <script>
 export default {
-  props: ["movie"],
+  props: ['movie'],
   computed: {
     title() {
-      return this.movie.title;
+      return this.movie.title
     },
     description() {
-      return this.movie.description ?? "Unknown";
+      return this.movie.description ?? 'Unknown'
     },
     genres() {
-      const genres = this.movie.genres.map(g => g.name).toSorted().join(', ');
+      const genres = this.movie.genres
+        .map((g) => g.name)
+        .toSorted()
+        .join(', ')
       if (genres.length > 0) {
-        return genres;
+        return genres
       } else {
-        return "Unknown";
+        return 'Unknown'
       }
     },
     year() {
-      return this.movie.year ?? "Unknown";
+      return this.movie.year ?? 'Unknown'
     },
     languages() {
-      const languages = this.movie.languages.toSorted().join(', ');
+      const languages = this.movie.languages.toSorted().join(', ')
       if (languages.length > 0) {
-        return languages;
+        return languages
       } else {
-        return "Unknown";
+        return 'Unknown'
       }
     },
     director() {
-      return this.movie.director ?? "Unknown";
+      return this.movie.director ?? 'Unknown'
     },
     actors() {
-      const actors = this.movie.actors.join(', ');
+      const actors = this.movie.actors.join(', ')
       if (actors.length > 0) {
-        return actors;
+        return actors
       } else {
-        return "Unknown";
+        return 'Unknown'
       }
     },
     duration() {
-      const duration = this.movie.duration;
+      const duration = this.movie.duration
       if (duration > 0) {
-        return `${duration} min`;
+        return `${duration} min`
       } else {
-        return "Unknown";
+        return 'Unknown'
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <template>
@@ -62,7 +65,7 @@ export default {
       <p class="element">{{ description }}</p>
 
       <p class="label">Genres</p>
-      <p class="element">{{ genres }} </p>
+      <p class="element">{{ genres }}</p>
 
       <p class="label">Year</p>
       <p class="element">{{ year }}</p>

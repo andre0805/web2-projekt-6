@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 
-export const useMoviesStore = defineStore('movies',  {
+export const useMoviesStore = defineStore('movies', {
   state: () => ({
     _isLoading: true,
     _movies: [],
     _genres: [],
-    _selectedGenreId: null,
+    _selectedGenreId: null
   }),
   getters: {
     isLoading: (state) => {
@@ -16,7 +16,9 @@ export const useMoviesStore = defineStore('movies',  {
     },
     moviesForSelectedGenre: (state) => {
       if (state._selectedGenreId) {
-        return state._movies.filter(movie => movie.genres.map(g => g.id).includes(state._selectedGenreId))
+        return state._movies.filter((movie) =>
+          movie.genres.map((g) => g.id).includes(state._selectedGenreId)
+        )
       }
       return state._movies || []
     },
@@ -75,7 +77,7 @@ export const useMoviesStore = defineStore('movies',  {
     },
     selectGenre(genre) {
       this._selectedGenreId = genre.id
-      console.log("Selected genre:", genre);
-    },
+      console.log('Selected genre:', genre)
+    }
   }
 })

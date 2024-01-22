@@ -2,29 +2,24 @@
 export default {
   computed: {
     showSearch() {
-      return this.$route.path === "/movies";
+      return this.$route.path === '/movies'
     },
     showMovies() {
-      return this.$route.path === "/search";
-    },
-  },
+      return this.$route.path === '/search'
+    }
+  }
 }
 </script>
 
 <template>
   <header>
-    <router-link class="logo" to="/">
-      🎬&nbsp;&nbsp;The Movie Hub
-    </router-link>
+    <router-link class="logo" to="/"> 🎬&nbsp;&nbsp;The Movie Hub </router-link>
 
-    <router-link v-if="showSearch" class="link" to="/search">
-      🔍&nbsp;&nbsp;Search
-    </router-link>
+    <router-link v-if="showSearch" class="link" to="/search"> 🔍&nbsp;&nbsp;Search </router-link>
 
     <router-link v-else-if="showMovies" class="link" to="/movies">
       🎬&nbsp;&nbsp;Movies
     </router-link>
-
   </header>
 </template>
 

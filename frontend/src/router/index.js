@@ -32,7 +32,6 @@ const router = createRouter({
   ]
 })
 
-
 router.beforeEach(async (to, from, next) => {
   // Fetch movies and genres if we are on the movies or search page
   if (to.name === 'movies' || to.name === 'search') {

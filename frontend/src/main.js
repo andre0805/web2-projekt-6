@@ -20,14 +20,14 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-app.component("custom-header", CustomHeader);
-app.component("movies-list", MoviesList);
-app.component("movie-list-item", MovieListItem);
-app.component("genre-carousel", GenreCarousel);
-app.component("genre-carousel-item", GenreCarouselItem)
-app.component("popup", Popup)
-app.component("movie-details", MovieDetails)
-app.component("rating", Rating)
-app.component("loading", Loading)
+app.component('custom-header', CustomHeader)
+app.component('movies-list', MoviesList)
+app.component('movie-list-item', MovieListItem)
+app.component('genre-carousel', GenreCarousel)
+app.component('genre-carousel-item', GenreCarouselItem)
+app.component('popup', Popup)
+app.component('movie-details', MovieDetails)
+app.component('rating', Rating)
+app.component('loading', Loading)
 
 app.mount('#app')

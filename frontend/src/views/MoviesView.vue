@@ -1,21 +1,23 @@
 <script>
-
-import Popup from '../components/Popup.vue'
-import MovieDetails from '../components/MovieDetails.vue'
 import MoviesList from '../components/MoviesList.vue'
 import { mapActions, mapState } from 'pinia'
 import { useMoviesStore } from '../stores/movies.js'
 import Loading from '../components/Loading.vue'
 
 export default {
-  components: { Loading, MoviesList, MovieDetails, Popup },
+  components: { Loading, MoviesList },
   computed: {
-    ...mapState(useMoviesStore, ["isLoading", "moviesForSelectedGenre", "genres", "selectedGenreId"]),
+    ...mapState(useMoviesStore, [
+      'isLoading',
+      'moviesForSelectedGenre',
+      'genres',
+      'selectedGenreId'
+    ])
   },
   methods: {
-    ...mapActions(useMoviesStore, ["selectGenre"]),
-  },
-};
+    ...mapActions(useMoviesStore, ['selectGenre'])
+  }
+}
 </script>
 
 <template>
@@ -23,7 +25,11 @@ export default {
     <loading />
   </div>
   <div v-else>
-    <genre-carousel :genres=genres :selectedGenreId="selectedGenreId" @selectGenre="selectGenre" />
+    <genre-carousel
+      :genres="genres"
+      :selectedGenreId="selectedGenreId"
+      @selectGenre="selectGenre"
+    />
     <movies-list :movies="moviesForSelectedGenre" :selectedGenreId="selectedGenreId" />
   </div>
 </template>

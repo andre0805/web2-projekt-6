@@ -1,10 +1,10 @@
 body {
   margin: 0;
   height: 100vh;
-  font-family: "Avenir Next", sans-serif;
+  font-family: 'Avenir Next', sans-serif;
 }
 
 #app {
-    height: 100%;
-    background-color: #e01111;
+  height: 100%;
+  background-color: #e01111;
 }

@@ -1,12 +1,12 @@
 <script>
 export default {
-  props: ["genre", "isSelected"],
+  props: ['genre', 'isSelected']
 }
 </script>
 
 <template>
-  <p v-if="isSelected" class="selected">{{genre.name}}</p>
-  <p v-else class="not-selected">{{genre.name}}</p>
+  <p v-if="isSelected" class="selected">{{ genre.name }}</p>
+  <p v-else class="not-selected">{{ genre.name }}</p>
 </template>
 
 <style scoped>
@@ -39,10 +39,6 @@ p:hover {
     background: #fff;
     color: #e01111;
   }
-}
-
-p.selected:hover {
-  background: #fff;
 }
 
 .not-selected {

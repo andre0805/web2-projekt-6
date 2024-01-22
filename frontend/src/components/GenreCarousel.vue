@@ -1,8 +1,8 @@
 <script>
 export default {
-  props: ["genres", "selectedGenreId"],
-  emits: ["selectGenre"],
-};
+  props: ['genres', 'selectedGenreId'],
+  emits: ['selectGenre']
+}
 </script>
 
 <template>
