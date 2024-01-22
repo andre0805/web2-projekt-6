@@ -35,9 +35,10 @@ export const useMoviesStore = defineStore('movies',  {
       try {
         this._isLoading = true
 
-        const response = await fetch('https://drumre-lab1-backend.onrender.com/movies')
-        console.log(response)
+        const response = await fetch('/api/movies')
         this._movies = await response.json()
+
+        console.log(response)
 
         setTimeout(() => {
           this._isLoading = false
@@ -55,11 +56,10 @@ export const useMoviesStore = defineStore('movies',  {
       try {
         this._isLoading = true
 
-        const response = await fetch('https://drumre-lab1-backend.onrender.com/genres')
-        console.log(response)
+        const response = await fetch('/api/genres')
+        this._genres = await response.json()
 
-        const fetchedGenres = await response.json()
-        this._genres.push({id: null, name: 'All'}, ...fetchedGenres);
+        console.log(response)
 
         setTimeout(() => {
           this._isLoading = false

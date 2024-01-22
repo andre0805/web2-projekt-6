@@ -1,11 +1,11 @@
 <script>
 
-import Popup from '@/components/Popup.vue'
-import MovieDetails from '@/components/MovieDetails.vue'
-import MoviesList from '@/components/MoviesList.vue'
+import Popup from '../components/Popup.vue'
+import MovieDetails from '../components/MovieDetails.vue'
+import MoviesList from '../components/MoviesList.vue'
 import { mapActions, mapState } from 'pinia'
-import { useMoviesStore } from '@/stores/movies.js'
-import Loading from '@/components/Loading.vue'
+import { useMoviesStore } from '../stores/movies.js'
+import Loading from '../components/Loading.vue'
 
 export default {
   components: { Loading, MoviesList, MovieDetails, Popup },

@@ -1,7 +1,7 @@
 <script>
-import MoviesList from '@/components/MoviesList.vue'
-import { mapActions, mapState } from 'pinia'
-import { useMoviesStore } from '@/stores/movies.js'
+import MoviesList from '../components/MoviesList.vue'
+import { mapState } from 'pinia'
+import { useMoviesStore } from '../stores/movies.js'
 
 export default {
   components: { MoviesList },
