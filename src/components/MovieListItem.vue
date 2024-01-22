@@ -22,6 +22,7 @@ export default {
   justify-content: start;
   align-items: start;
   max-width: 800px;
+  width: 100%;
   height: 200px;
   background: #171717;
   border-radius: 8px;
