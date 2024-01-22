@@ -22,6 +22,9 @@ export const useMoviesStore = defineStore('movies',  {
     },
     selectedGenreId: (state) => {
       return state._selectedGenreId
+    },
+    searchQuery: (state) => {
+      return state._searchQuery
     }
   },
   actions: {
@@ -61,10 +64,5 @@ export const useMoviesStore = defineStore('movies',  {
       this._selectedGenreId = genre.id
       console.log("Selected genre:", genre);
     },
-    // searchMovies(query) {
-    //   this.searchQuery = query
-    //   return this.movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()))
-    // }
   }
-
 })
