@@ -10,7 +10,7 @@ import Loading from '@/components/Loading.vue'
 export default {
   components: { Loading, MoviesList, MovieDetails, Popup },
   computed: {
-    ...mapState(useMoviesStore, ["isLoading", "movies", "genres", "selectedGenreId"]),
+    ...mapState(useMoviesStore, ["isLoading", "moviesForSelectedGenre", "genres", "selectedGenreId"]),
   },
   methods: {
     ...mapActions(useMoviesStore, ["selectGenre"]),
@@ -24,7 +24,7 @@ export default {
   </div>
   <div v-else>
     <genre-carousel :genres=genres :selectedGenreId="selectedGenreId" @selectGenre="selectGenre" />
-    <movies-list :movies="movies" :selectedGenreId="selectedGenreId" />
+    <movies-list :movies="moviesForSelectedGenre" :selectedGenreId="selectedGenreId" />
   </div>
 </template>
 
