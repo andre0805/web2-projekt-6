@@ -1,8 +1,8 @@
 <script>
-import MoviesList from '../components/MoviesList.vue'
+import MoviesList from '../components/movies-list/MoviesList.vue'
 import { mapActions, mapState } from 'pinia'
 import { useMoviesStore } from '../stores/movies.js'
-import Loading from '../components/Loading.vue'
+import Loading from '../components/other/Loading.vue'
 
 export default {
   components: { Loading, MoviesList },

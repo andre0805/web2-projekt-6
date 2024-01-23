@@ -1,5 +1,5 @@
 <script>
-import MoviesList from '../components/MoviesList.vue'
+import MoviesList from '../components/movies-list/MoviesList.vue'
 import { mapState } from 'pinia'
 import { useMoviesStore } from '../stores/movies.js'
 
