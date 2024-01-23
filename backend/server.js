@@ -35,7 +35,7 @@ app.get('/api/movies', async (req, res) => {
     const moviesFile = path.join(__dirname, 'data', 'movies.json');
     const moviesData = fs.readFileSync(moviesFile, 'utf8');
     const movies = JSON.parse(moviesData);
-    res.json(movies.slice(0, 3));
+    res.json(movies);
   } catch (error) {
     console.error(error)
     res.json([])
