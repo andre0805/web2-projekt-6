@@ -40,8 +40,6 @@ export const useMoviesStore = defineStore('movies', {
         const response = await fetch('/api/movies')
         this._movies = await response.json()
 
-        console.log(response)
-
         setTimeout(() => {
           this._isLoading = false
         }, 1000)
@@ -60,8 +58,6 @@ export const useMoviesStore = defineStore('movies', {
 
         const response = await fetch('/api/genres')
         this._genres = await response.json()
-
-        console.log(response)
 
         setTimeout(() => {
           this._isLoading = false
