@@ -14,6 +14,7 @@ dist-ssr
 coverage
 *.local
 .env
+.zip
 
 /backend/public
 /cypress/videos/
