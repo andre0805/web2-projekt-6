@@ -15,6 +15,7 @@ coverage
 *.local
 .env
 *.zip
+readme.txt
 
 /backend/public
 /cypress/videos/
