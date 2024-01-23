@@ -1,31 +1,31 @@
-# web2-projekt-6
+# 🎬 The Movies Hub
 
-This template should help get you started developing with Vue 3 in Vite.
+This Vue project was developed as a part of 6th Project for [Advanced Web Development](https://www.fer.unizg.hr/en/course/awd) @ FER.
+It's a simple movie search app that uses [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) to search for movies and display their details.
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Hosted at:
+* Frontend
+  * [https://web2-projekt-6.onrender.com](https://web2-projekt-6.onrender.com)
+* Backend (API):
+  * [https://web2-projekt-6.onrender.com/api](https://web2-projekt-6.onrender.com/api)
 
-## Customize configuration
+### Features:
+* Explore all sorts of movies
+* View movie details
+* Filter movies by genre
+* Search for movies
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Build and start server
 
 ```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+npm run serve
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
