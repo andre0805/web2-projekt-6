@@ -1,26 +1,30 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
-  // dev server proxy
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://web2-projekt-6-backend.onrender.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+export default ({ mode }) => {
+  process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') }
+  return defineConfig({
+    plugins: [
+      vue(),
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    // dev server proxy
+    server: {
+      proxy: {
+        '/api': {
+          target: 'https://web2-projekt-6.onrender.com/api',
+        }
       }
     }
-  }
-})
+  })
+}
