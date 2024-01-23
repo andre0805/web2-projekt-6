@@ -10,7 +10,9 @@
     "clean": "rm -rf backend/public/dist",
     "build": "npm run build:frontend && echo 'Build finished!' || echo 'Build failed!'",
     "build:frontend": "cd frontend && vite build --mode production --outDir ../backend/public/ --emptyOutDir",
-    "server": "node backend/server.js"
+    "server": "node backend/server.js",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write frontend/src/"
   },
   "engines": {
     "node": "18.x"
