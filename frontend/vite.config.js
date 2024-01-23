@@ -18,13 +18,5 @@ export default ({ mode }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },
-    // dev server proxy
-    server: {
-      proxy: {
-        '/api': {
-          target: 'https://web2-projekt-6.onrender.com/api',
-        }
-      }
-    }
   })
 }
