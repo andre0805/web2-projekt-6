@@ -71,7 +71,7 @@ input[type='search']:focus {
     width: 90%;
     height: 45px;
     padding: 0 16px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>
