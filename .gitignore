@@ -15,6 +15,7 @@ coverage
 *.local
 .env
 
+/backend/public
 /cypress/videos/
 /cypress/screenshots/
 
