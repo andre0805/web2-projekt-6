@@ -61,6 +61,7 @@ Svojstva aplikacije:
 10. store (Pinia) - DA
 	- frontend/src/stores/movies.js
 	- koristi se na više mjesta, npr. u frontend/src/views/MoviesView.vue, :10, :18
+	- koristi se za pohranu podataka o filmovima i žanrovima te o trenutno odabranom žanru
 
 11. asinkroni dohvat podataka s backenda - DA
 	- frontend/src/stores/movies.js, :40, :59 (dohvat filmova i žanrova s backenda)
