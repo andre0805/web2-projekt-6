@@ -2,7 +2,6 @@
   "name": "the-movie-hub",
   "version": "1.0.0",
   "description": "'The Movie Hub' app is a web application that allows users to explore movies and TV shows as well as search for their favorite ones.",
-  "author": "Andre Flego",
   "license": "ISC",
   "type": "module",
   "scripts": {
