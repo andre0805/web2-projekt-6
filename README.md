@@ -28,8 +28,7 @@ npm install
 npm run serve
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### Open in browser
+* Homepage: https://localhost:3000
+* Movies: https://localhost:3000/movies
+* Search: https://localhost:3000/search
