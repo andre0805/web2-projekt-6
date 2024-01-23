@@ -20,7 +20,14 @@ export default {
       }
     },
     year() {
-      return this.movie.year ?? 'Unknown'
+      const releaseDate = this.movie.releaseDate
+      if (releaseDate) {
+        const date = new Date(releaseDate)
+        const year = date.getFullYear()
+        return year > 0 ? year : 'Unknown'
+      } else {
+        return 'Unknown'
+      }
     },
     languages() {
       const languages = this.movie.languages.toSorted().join(', ')
