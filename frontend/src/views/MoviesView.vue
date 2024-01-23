@@ -18,7 +18,7 @@ export default {
     ...mapActions(useMoviesStore, ['selectGenre'])
   },
   mounted() {
-    this.selectGenre(null)
+    console.log('MoviesView mounted')
   }
 }
 </script>
