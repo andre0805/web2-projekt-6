@@ -118,6 +118,7 @@ export default {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  overscroll-behavior: contain;
 }
 
 ::-webkit-scrollbar {
