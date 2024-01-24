@@ -10,8 +10,13 @@
 
 <style scoped>
 div.welcome_text {
-  margin-top: 200px;
-  text-align: center;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   font-weight: 500;
   color: #171717;
