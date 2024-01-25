@@ -1,6 +1,6 @@
 # 🎬 The Movies Hub
 
-This Vue project was developed as a part of 6th Project for [Advanced Web Development](https://www.fer.unizg.hr/en/course/awd) @ FER.
+This Vue project was developed as a part of the 6th Project for [Advanced Web Development](https://www.fer.unizg.hr/en/course/awd) @ FER.
 It's a simple movie search app that uses [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) to search for movies and display their details.
 
 
